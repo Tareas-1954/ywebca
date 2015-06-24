@@ -1,0 +1,16 @@
+{
+  "name": "ywca-workspace",
+  "version": "0.0.1",
+  "description": "YWCA Workspace for Beatriz",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Tareas-1954/ywebca.git"
+  },
+  "author": {
+    "name": "Beatriz",
+    "email": "beatriz2mk@gmail.com",
+    "url": "https://github.com/Tareas-1954"
+  },
+  "license": "MIT",
+  "dependencies": {}
+}
