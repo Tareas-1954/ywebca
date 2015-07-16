@@ -336,27 +336,17 @@ Exer.condition3 = function ( whatDay ) {
   // Declare and initialize `luckyNumber`
 var luckyNumber=7;
   // If the length of `whatDay` is 6 or less...
-if(whatDay.length==6){
+  
+if(whatDay.length<=6){
   luckyNumber+="!";
-};
-  // If `whatDay` is "Mannersday"...
-  if (whatDay=="Mannersday") {
-    luckyNumber+=4;
-  };
-  // If `whatDay` is "Foosday"...
-  if (whatDay=="Foosday") {
-    luckyNumber+=2;
-  }
-  // If `whatDay` is "Heyday"...
-  if(whatDay=="Heyday"){
-    luckyNumber+=luckyNumber.charAt(0);
-  }
-  // Otherwise...
+}
+//if(whatDay !="Mannersday" && whatDay!="Foosday" && whatDay!="Heyday")
 else{ 
   luckyNumber=Infinity;
 }
   // Return `luckyNumber`
 return luckyNumber;
+
 };
 
 // Conditional 4
@@ -483,22 +473,31 @@ console.log("                    ...AAAAAAAAAAH!");
 // Rewrite the repetative code with for loops.
 Exer.for2 = function () {
 
- for (var sillas =0; sillas < 2; sillas++){
+ for (var sillas = 0; sillas < 2; sillas++){
     console.log( "Hi!" );
-  console.log( "My name is" );
-  console.log( "My name is" );
-  console.log( "My name is" );
+    for (var mesas = 0; mesas < 3; mesas++){
+      console.log( "My name is" );
+    }
   console.log( "Slim Shady" );
  }
+ 
 };
 /* jshint ignore:end */
 
 // For 3
 // Write a loop that counts backwards from 20 to 5 and prints the number and
 // "even" if the number is even and "odd" if the number is odd.
+
 Exer.for3 = function () {
 
-  // Your work here
+for(var numero=20; numero >= 5; numero--){
+  if (numero%2==0) {
+    console.log(numero, "even");
+  }
+  else{
+    console.log(numero,"odd");
+  }
+}
 
 };
 
@@ -551,7 +550,7 @@ return kiwis;
 // Edit the for loop to use the incrementation operator.
 Exer.succinct2 = function () {
 
-  for ( var hippo = 2; hippo <= 10; hippo += 1 ) {
+  for ( var hippo = 2; hippo <= 10; hippo++) {
     console.log( hippo + "! " + hippo + " fluttering hippos! Ah ah ah ah ah!" );
   }
 
@@ -564,7 +563,7 @@ Exer.succinct3 = function () {
   var message = "Reverse me!";
   var pointer = message.length;
   while( pointer > 0 ) {
-    console.log( message.charAt( pointer-- ) );
+    console.log(message.charAt(--pointer));
   }
 
 };
@@ -579,15 +578,24 @@ Exer.switch1 = function ( animal ) {
   // Create a switch that dispatches on the parameter `animal`.
   // In each case, concatenate the correct response to end of the `output`
   // string.
-
+  switch(animal){
     // "cow": "foo"
-
+    case "cow":
+    output+='foo';
+    break;
     // "sheep": "bar"
-
+    case "sheep":
+    output+="bar";
+    break;
     // "duck": "quux"
-
+    case "duck":
+    output+="quux";
+    break;
     // default: "ring-a-ding-ding-dingding-ding-a-ding-ding"
-
+    default:
+    output+="ring-a-ding-ding-dingding-ding-a-ding-ding";
+    break;
+}
   output += '"!';
   console.log( output );
 
@@ -598,11 +606,11 @@ Exer.switch1 = function ( animal ) {
 /* jshint ignore:start */
 Exer.capitalization1 = function() {
 
-  var ZeRo = 0;
-  var HAPPYCAT = new string("How did this get here! I'm not good at computer!");
-  for (var Index = 0; I < HAPPYCAT.Length; Index++) {
-    if (Index % 4 == ZeRo) {
-      Console.Log(HAPPYCAT);
+  var zero = 0;
+  var happyCat = new String("How did this get here! I'm not good at computer!");
+  for (var index = 0; i < happyCat.length; index++) {
+    if (index % 4 == zero) {
+      console.log(happyCat);
     }
   }
 
@@ -615,17 +623,18 @@ Exer.comments1 = function ( war, missiles, wood, sheep, brick ) {
 
   if ( war ) {
     if ( missiles ) {
-      missiles.launch();
+      //missiles.launch();
     } else {
       cower();
     }
   } else {
     if ( wood ) {
       wood.trade( sheep, 1 );
+      //el pan esta hecho con wheat.
     } else if ( sheep ) {
       sheep.trade( wood, 3 );
     } else {
-      brick.buy(2);
+      brick.buy(2);//mi casa la rompieron los bandits!
     }
   }
 
@@ -633,6 +642,6 @@ Exer.comments1 = function ( war, missiles, wood, sheep, brick ) {
 
 Exer.comments2 = function () {
 
-  // your work here
+  /*texto*/
 
 };
